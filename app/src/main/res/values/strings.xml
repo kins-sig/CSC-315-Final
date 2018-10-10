@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">SeahawkTours</string>
+    <string-array name="buildings">
+        <item>select a building</item>
+        <item>Computer Information Systems</item>
+        <item>Trask Coliseum</item>
+        <item>Bear Hall</item>
+    </string-array>
+    <string name="cis_description">
+        The Computer Information Systems (CIS) building was constructed</string>
+    <string name="cis_caption">Computer Information Systems Building circa 2007</string>
+    <string name="trask_description">Building History
+        Funding to construct a large sports venue</string>
+    <string name="trask_caption">Trask Coliseum circa 1983</string>
+    <string name="bear_description">Building History
+        Bear Hall opened at its present site in 1972</string>
+    <string name="bear_caption">Bear Hall circa 1999</string>
 </resources>
