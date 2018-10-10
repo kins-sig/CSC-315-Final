@@ -22,17 +22,19 @@
         android:contentDescription="@string/uncw_main_logo_description" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/buildings"
         android:entries="@array/buildings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_centerInParent="true"
         android:layout_below="@id/uncw_main_logo"
-        android:padding="16dp"
-        android:textSize="16sp"
+        android:padding="@dimen/activity_padding"
+        android:textSize="@dimen/standard_font"
         android:background="@drawable/button_shape"
         android:popupBackground="@drawable/button_shape"
+        android:verticalScrollbarPosition="right"
+
         />
 
     <Button
@@ -46,7 +48,7 @@
         android:background="@drawable/button_shape"
         android:padding="16dp"
         android:textSize="16sp"
-
+        android:onClick="onClickFindBuilding"
         />
 
 </RelativeLayout>
