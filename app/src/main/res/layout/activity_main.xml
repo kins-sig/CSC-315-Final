@@ -34,7 +34,6 @@
         android:background="@drawable/button_shape"
         android:popupBackground="@drawable/button_shape"
         android:verticalScrollbarPosition="right"
-
         />
 
     <Button
