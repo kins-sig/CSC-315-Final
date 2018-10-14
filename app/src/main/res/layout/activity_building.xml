@@ -17,7 +17,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/activity_vertical_margin"
             android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:text="@string/cis_building"
+            android:text=""
             android:textColor="@color/text_color"
             android:textSize="@dimen/standard_font" />
         <ImageView
@@ -39,7 +39,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/activity_caption_margin"
             android:layout_below="@+id/building_image"
-            android:text="@string/cis_caption"
+            android:text=""
             android:textColor="@color/caption_color"
             android:textSize="@dimen/caption_font"
             />
@@ -54,7 +54,7 @@
             android:layout_marginBottom="@dimen/activity_vertical_margin"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:text="@string/bear_description"
+            android:text=""
             android:textColor="@color/text_color"
             android:textSize="@dimen/standard_font" />
     </RelativeLayout>
