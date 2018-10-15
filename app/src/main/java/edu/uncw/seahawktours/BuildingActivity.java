@@ -20,26 +20,22 @@ public class BuildingActivity extends Activity {
         String message = bundle.getString("building");
         assert message != null;
         if (message.equals(getString(R.string.cis_building))){
-            String[] buildingInfo = getResources().getStringArray(R.array.cis_building);
-            buildingName.setText(buildingInfo[0]);
-            buildingCaption.setText(buildingInfo[1]);
-            buildingDescription.setText(buildingInfo[2]);
+            buildingName.setText(R.string.cis_building);
             buildingImage.setImageResource(R.drawable.cis_building);
+            buildingCaption.setText(R.string.cis_caption);
+            buildingDescription.setText(R.string.cis_description);
         }
         else if (message.equals(getString(R.string.trask_building))){
-            String[] buildingInfo = getResources().getStringArray(R.array.trask_building);
-            buildingName.setText(buildingInfo[0]);
-            buildingCaption.setText(buildingInfo[1]);
-            buildingDescription.setText(buildingInfo[2]);
+            buildingName.setText(R.string.trask_building);
             buildingImage.setImageResource(R.drawable.trask_building);
+            buildingCaption.setText(R.string.trask_caption);
+            buildingDescription.setText(R.string.trask_description);
         }
         else if (message.equals(getString(R.string.bear_building))){
-            String[] buildingInfo = getResources().getStringArray(R.array.bear_building);
-            buildingName.setText(buildingInfo[0]);
-            buildingCaption.setText(buildingInfo[1]);
-            buildingDescription.setText(buildingInfo[2]);
+            buildingName.setText(R.string.bear_building);
             buildingImage.setImageResource(R.drawable.bear_building);
+            buildingCaption.setText(R.string.bear_caption);
+            buildingDescription.setText(R.string.bear_description);
         }
     }
-
 }
