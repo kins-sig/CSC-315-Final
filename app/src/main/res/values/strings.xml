@@ -1,22 +1,35 @@
 <resources>
+    <!--
+    Commonly used strings
+    -->
     <string name="app_name">SeahawkTours</string>
+    <string name="title_activity_cis">CisActivity</string>
+    <string name="go_button_text">Go</string>
+    <string name="uncw_main_logo_description">UNCW logo in teal and blue</string>
+    <string name="cis_building_front_image">Front view of the CIS building</string>
+
+    <!--
+    All building names
+    -->
     <string-array name="buildings">
         <item>Select a building</item>
         <item>Computer Information Systems</item>
         <item>Trask Coliseum</item>
         <item>Bear Hall</item>
     </string-array>
-    <string name="title_activity_cis">CisActivity</string>
-    <string name="go_button_text">Go</string>
-    <string name="uncw_main_logo_description">UNCW logo in teal and blue</string>
     <!--
     Computer Information Systems building information
     -->
-    <string name="cis_building"><big><b>Computer Information Systems</b></big></string>
-    <string name="cis_building_front_image">Front view of the CIS building</string>
-    <string name="cis_caption">Computer Information Systems Building circa 2007</string>
-    <string name="cis_description">
-        <b>Building History</b>
+    <string name="cis_building">Computer Information Systems</string>
+    <string-array name="cis_building">
+        <item><big><b>Computer Information Systems</b></big></item>
+        <!--
+        Image resource is loaded from the drawable.
+        -->
+        <!--Image caption-->
+        <item>Computer Information Systems Building circa 2007</item>
+        <!--Building description-->
+        <item><b>Building History</b>
         \n\nThe Computer Information Systems (CIS) building was constructed to house the Information Systems and Operations Management Department from the Cameron School of Business and the Department of Computer Science from the College of Arts &amp; Sciences.
         The CIS Building, a new 51,731 square-foot state-of-the-art facility on the UNCW campus, opened January 10, 2007 for the new school semester. Work on the facility began on July 29, 2004 with the groundbreaking, and competed in December of 2006.
         The building cost approximately $12.8 million and was funded by the North Carolina State Bond campaign of 2000.
@@ -24,16 +37,21 @@
         Edward Jones Financial Lab also includes the Bloomberg Trading Terminal. With this terminal, students and faculty have the ability to trade stocks directly with the New York Stock Exchange, NASDAQ and more.
         \n\nThe Department of Computer Science and the Department of Information Systems &amp; Operations Management are housed at CIS together and are jointly offering a Master of Science in Computer Science Information Systems (MSCSIS) degree,
         an intensive graduate program aimed at preparing the student to assume leadership roles in the development and implementation of computer and information systems.
-        \n
-    </string>
+        \n</item>
+    </string-array>
     <!--
     Trask Colesium building information
     -->
-    <string name="trask_coliseum_building"><big><b>Trask Coliseum</b></big></string>
-    <!--<string name="trask_coliseum_building_front_image">Front view of Trask Coliseum building</string>-->
-    <string name="trask_caption">Trask Coliseum circa 1983</string>
-    <string name="trask_description">
-        <b>Building History</b>
+    <string name="trask_building">Trask Coliseum</string>
+    <string-array name="trask_building">
+        <item><big><b>Trask Coliseum</b></big></item>
+        <!--
+        Image resource is loaded from the drawable.
+        -->
+        <!--Image caption-->
+        <item>Trask Coliseum circa 1983</item>
+        <!--Building description-->
+        <item><b>Building History</b>
         \n\nFunding to construct a large sports venue on the University of North Carolina Wilmington campus began in 1974. Trask serves as the home for the Physical Education Department, natatorium, public performance arena, home court for Seahawk Sports as well as
         an intercollegiate venue. The building, dedicated in 1977, has been upgraded to include air conditioning, additional seating and handicap access over the past twenty-five years.
         \n\n<b>Namesake</b>
@@ -48,16 +66,21 @@
         \n\n<b>Rountree - Jones Basketball Complex</b>
         \n\nNamed for local attorney, George Rountree III and former Wilmington Mayor, David Jones, the Rountree-Jones Complex is the modern locker room for the men\'s varsity basketball team. Mr. Rountree, a Wilmington native, earned his law degree from the
         University of Arizona, where he a former basketball player. Mr. Jones, a local developer and businessman is a generous supporter of UNCW.
-        \n
-    </string>
+        \n</item>
+    </string-array>
     <!--
     Bear Hall building information
     -->
-    <string name="bear_building"><big><b>Bear Hall</b></big></string>
-    <string name="bear_hall_building_front_image">Front view of Bear Hall building</string>
-    <string name="bear_caption">Bear Hall circa 1999</string>
-    <string name="bear_description">
-        <b>Building History</b>
+    <string name="bear_building">Bear Hall</string>
+    <string-array name="bear_building">
+        <item><big><b>Bear Hall</b></big></item>
+        <!--
+        Image resource is loaded from the drawable.
+        -->
+        <!--Image caption-->
+        <item>Bear Hall circa 1999</item>
+        <!--Building description-->
+        <item><b>Building History</b>
         \n\nBear Hall opened at its present site in 1972 as the home for the Business and Economics Departments. Currently, the Departments of Computer Science, Mathematics &amp; Statistics, and Philosophy &amp; Religion occupy classrooms, teaching labs and faculty offices.
         The College of Arts and Science also resides here.
         \n\n
@@ -67,8 +90,6 @@
         better the community such as a wing to James Walker Memorial Hospital. Isaac Bear was known as "one of Wilmington's most capable and highly esteemed businessmen." He was a member of North State Lodge of B\'Nai Brith, past Grand President of District Grand Lodge,
         and B.P.O.E Elks #532. Upon his death, the Isaac Bear Memorial School served to remember "the close friendship and devotion between the brothers and their interest in public welfare." The Order of the Isaac Bear is an honorary organization composed of faculty members
         that taught at the site of the original Wilmington College. Once the college built the new campus off of College Road, the Isaac Bear Building was torn down (1961).
-        \n
-    </string>
-
-
+        \n</item>
+    </string-array>
 </resources>
