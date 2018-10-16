@@ -63,8 +63,8 @@
             android:id="@+id/seahawk_noBack"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_alignBottom="@id/building_description"
-            android:layout_alignEnd="@id/building_description"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
             android:padding="10dp"
             android:src="@drawable/seahawk_noback" />
     </RelativeLayout>
