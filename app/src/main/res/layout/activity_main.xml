@@ -35,7 +35,7 @@
         android:textSize="@dimen/standard_font"
         android:background="@drawable/button_shape"
         android:popupBackground="@drawable/button_shape"
-        android:verticalScrollbarPosition="right"
+        android:verticalScrollbarPosition="defaultPosition"
         />
 
     <Button

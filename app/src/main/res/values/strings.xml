@@ -62,7 +62,7 @@
     -->
     <string name="bear_building"><big><b>Bear Hall</b></big></string>
     <!--Image resource is loaded from the drawable.-->
-    <string name="bear_caption">Bear Hall circa 1999></string>
+    <string name="bear_caption">Bear Hall circa 1999</string>
     <string name="bear_description"><b>Building History</b>
         \n\nBear Hall opened at its present site in 1972 as the home for the Business and Economics Departments. Currently, the Departments of Computer Science, Mathematics &amp; Statistics, and Philosophy &amp; Religion occupy classrooms, teaching labs and faculty offices.
         The College of Arts and Science also resides here.
@@ -74,4 +74,5 @@
         and B.P.O.E Elks #532. Upon his death, the Isaac Bear Memorial School served to remember "the close friendship and devotion between the brothers and their interest in public welfare." The Order of the Isaac Bear is an honorary organization composed of faculty members
         that taught at the site of the original Wilmington College. Once the college built the new campus off of College Road, the Isaac Bear Building was torn down (1961).
         \n</string>
+    <string name="uncw_logo">UNCW logo</string>
 </resources>
