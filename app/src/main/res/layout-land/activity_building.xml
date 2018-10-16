@@ -67,7 +67,8 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/building_description"
             android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:src="@drawable/seahawk_noback"/>
+            android:src="@drawable/seahawk_noback"
+            android:contentDescription="@string/uncw_logo" />
     </RelativeLayout>
 
 

@@ -28,6 +28,7 @@
         android:entries="@array/buildings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:minWidth="280dp"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_centerInParent="true"
         android:layout_below="@id/uncw_main_logo"
