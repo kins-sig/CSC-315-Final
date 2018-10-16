@@ -25,7 +25,9 @@
         android:id="@+id/buildings"
         android:entries="@array/buildings"
         android:layout_width="wrap_content"
+        android:minWidth="280dp"
         android:layout_height="wrap_content"
+        android:dropDownWidth="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_alignParentEnd="true"
@@ -34,7 +36,7 @@
         android:textSize="@dimen/standard_font"
         android:background="@drawable/button_shape"
         android:popupBackground="@drawable/button_shape"
-        android:verticalScrollbarPosition="right"
+        android:spinnerMode="dropdown"
         />
 
     <Button
@@ -57,14 +59,12 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/go_button"
         android:layout_alignEnd="@+id/buildings"
-        android:layout_alignLeft="@id/uncw_main_logo"
+        android:layout_alignStart="@id/uncw_main_logo"
         android:layout_below="@id/buildings"
-        android:layout_marginLeft="-1dp"
+        android:layout_marginStart="-1dp"
         android:fontFamily="sans-serif-condensed"
         android:text="@string/welcome"
         android:textAlignment="center"
         android:textColor="@android:color/background_light"
         android:textStyle="bold" />
-
-
 </RelativeLayout>
