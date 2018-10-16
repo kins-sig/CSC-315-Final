@@ -43,20 +43,4 @@ public class MainActivity extends Activity {
         intent.putExtra("building", building);
         startActivity(intent);
     }
-
-    @Override
-    protected void onPause(){
-        super.onPause();
-
-    }
-    @Override
-    protected void onResume(){
-        super.onResume();
-
-    }
-    @Override
-    protected void onDestroy(){
-        super.onDestroy();
-
-    }
 }
