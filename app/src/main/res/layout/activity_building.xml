@@ -8,6 +8,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <TextView
             android:id="@+id/building_name"
             android:layout_width="wrap_content"
@@ -15,11 +16,14 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
             android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:fontFamily="sans-serif-condensed"
             android:text=""
-            android:textColor="@color/text_color"
-            android:textSize="@dimen/standard_font" />
+            android:textAllCaps="true"
+            android:textColor="@android:color/background_light"
+            android:textSize="@dimen/large_font"
+            android:textStyle="bold" />
         <ImageView
             android:id="@+id/building_image"
             android:layout_width="match_parent"
@@ -60,13 +64,13 @@
             android:layout_marginVertical="@dimen/activity_vertical_margin"/>
 
         <ImageView
-            android:id="@+id/seahawk_noBack"
+            android:id="@+id/seahawk_noback"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:padding="10dp"
-            android:src="@drawable/seahawk_noback" />
+            android:layout_below="@id/building_description"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:src="@drawable/seahawk_noback"/>
     </RelativeLayout>
 
 

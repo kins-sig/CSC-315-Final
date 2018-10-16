@@ -15,11 +15,14 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
             android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:fontFamily="sans-serif-condensed"
             android:text=""
-            android:textColor="@color/text_color"
-            android:textSize="@dimen/standard_font" />
+            android:textAllCaps="true"
+            android:textColor="@android:color/background_light"
+            android:textSize="@dimen/large_font"
+            android:textStyle="bold" />
         <ImageView
             android:id="@+id/building_image"
             android:layout_width="match_parent"
@@ -57,6 +60,14 @@
             android:text=""
             android:textColor="@color/text_color"
             android:textSize="@dimen/standard_font" />
+        <ImageView
+            android:id="@+id/seahawk_noback"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/building_description"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:src="@drawable/seahawk_noback"/>
     </RelativeLayout>
 
 
