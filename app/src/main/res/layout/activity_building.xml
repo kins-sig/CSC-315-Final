@@ -30,7 +30,7 @@
             android:layout_height="match_parent"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/uncw_main_logo"
+            android:src="@drawable/seahawk_full_logo"
             android:layout_below="@id/building_name"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
