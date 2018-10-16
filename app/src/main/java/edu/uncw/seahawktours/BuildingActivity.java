@@ -38,4 +38,20 @@ public class BuildingActivity extends Activity {
             buildingDescription.setText(R.string.bear_description);
         }
     }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+
+    }
+    @Override
+    protected void onResume(){
+        super.onResume();
+
+    }
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+
+    }
 }
