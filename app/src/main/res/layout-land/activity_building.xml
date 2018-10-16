@@ -22,7 +22,7 @@
             android:fontFamily="sans-serif-condensed"
             android:text=""
             android:textAllCaps="true"
-            android:textColor="@android:color/background_light"
+            android:textColor="@color/white_text"
             android:textSize="@dimen/large_font"
             android:textStyle="bold" />
         <ImageView
