@@ -7,6 +7,7 @@
     <string name="go_button_text">Go</string>
     <string name="uncw_main_logo_description">UNCW logo in teal and blue</string>
     <string name="cis_building_front_image">Front view of the CIS building</string>
+    <string name="welcome">Ready to learn more about your favorite UNCW buildings? Select a building from above and hit "Go"! Wings up!</string>
 
     <!--
     All building names

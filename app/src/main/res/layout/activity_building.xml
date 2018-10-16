@@ -56,7 +56,17 @@
             android:layout_marginRight="@dimen/activity_horizontal_margin"
             android:text=""
             android:textColor="@color/text_color"
-            android:textSize="@dimen/standard_font" />
+            android:textSize="@dimen/standard_font"
+            android:layout_marginVertical="@dimen/activity_vertical_margin"/>
+
+        <ImageView
+            android:id="@+id/seahawk_noBack"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignBottom="@id/building_description"
+            android:layout_alignEnd="@id/building_description"
+            android:padding="10dp"
+            android:src="@drawable/seahawk_noback" />
     </RelativeLayout>
 
 
