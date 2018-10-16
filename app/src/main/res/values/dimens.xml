@@ -5,7 +5,7 @@
     <dimen name="activity_caption_margin">4dp</dimen>
 
     <dimen name="standard_font">16sp</dimen>
-    <dimen name="large_font">24sp</dimen>
+    <dimen name="large_font">20sp</dimen>
     <dimen name="caption_font">12sp</dimen>
     <dimen name="activity_padding">16dp</dimen>
     <dimen name="text_margin">16dp</dimen>
