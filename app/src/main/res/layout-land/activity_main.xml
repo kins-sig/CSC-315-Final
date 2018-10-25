@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/top_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_color"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".MainActivity">
 
     <ImageView
@@ -17,55 +18,48 @@
         android:layout_height="match_parent"
         android:adjustViewBounds="true"
         android:contentDescription="@string/uncw_main_logo_description"
-        android:layout_alignParentStart="true"
         android:scaleType="fitCenter"
-        android:src="@drawable/seahawk_full_logo" />
+        android:src="@drawable/seahawk_full_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/buildings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_shape"
         android:entries="@array/buildings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:minWidth="280dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@id/uncw_main_logo"
         android:padding="@dimen/activity_padding"
-        android:textSize="@dimen/standard_font"
-        android:background="@drawable/button_shape"
         android:popupBackground="@drawable/button_shape"
+        android:textSize="@dimen/standard_font"
         android:verticalScrollbarPosition="right"
-        />
-
-    <Button
-        android:id="@+id/go_button"
-        android:text="@string/go_button_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:background="@drawable/button_shape"
-        android:padding="16dp"
-        android:textSize="16sp"
-        android:onClick="onClickDisplayBuilding"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/uncw_main_logo"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/welcome"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/go_button"
-        android:layout_alignEnd="@+id/buildings"
-        android:layout_alignStart="@id/buildings"
-        android:layout_below="@id/buildings"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:fontFamily="sans-serif-condensed"
         android:text="@string/welcome"
         android:textAlignment="center"
         android:textColor="@android:color/background_light"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/buildings"
+        app:layout_constraintEnd_toEndOf="@id/buildings"
+        app:layout_constraintStart_toStartOf="@+id/buildings" />
 
-
-</RelativeLayout>
+    <Button
+        android:id="@+id/go_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_shape"
+        android:onClick="onClickDisplayBuilding"
+        android:padding="16dp"
+        android:text="@string/go_button_text"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</android.support.constraint.ConstraintLayout>
