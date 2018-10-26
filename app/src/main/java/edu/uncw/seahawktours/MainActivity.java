@@ -37,6 +37,16 @@ public class MainActivity extends Activity {
             startIntent(building);
             mediaPlayer.start();
         }
+        else if (selectedBuilding.equals(getString(R.string.alderman_building))){
+            building = getString(R.string.alderman_building);
+            startIntent(building);
+            mediaPlayer.start();
+        }
+        else if (selectedBuilding.equals(getString(R.string.belk_building))){
+            building = getString(R.string.belk_building);
+            startIntent(building);
+            mediaPlayer.start();
+        }
     }
     private void startIntent(String building){
         Intent intent = new Intent(MainActivity.this, BuildingActivity.class);

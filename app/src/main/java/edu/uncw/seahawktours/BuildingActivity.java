@@ -37,5 +37,17 @@ public class BuildingActivity extends Activity {
             buildingCaption.setText(R.string.bear_caption);
             buildingDescription.setText(R.string.bear_description);
         }
+        else if (message.equals(getString(R.string.alderman_building))) {
+            buildingName.setText(R.string.alderman_building);
+            buildingImage.setImageResource(R.drawable.alderman_building);
+            buildingCaption.setText(R.string.alderman_caption);
+            buildingDescription.setText(R.string.alderman_description);
+        }
+        else if (message.equals(getString(R.string.belk_building))) {
+            buildingName.setText(R.string.belk_building);
+            buildingImage.setImageResource(R.drawable.belk_building);
+            buildingCaption.setText(R.string.belk_caption);
+            buildingDescription.setText(R.string.belk_description);
+        }
     }
 }
