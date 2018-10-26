@@ -4,6 +4,12 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
+import android.support.annotation.NonNull;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.TextPaint;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -61,15 +67,25 @@ public class BuildingActivity extends Activity {
         }
 
         final String finalUrl = url;
-        link.setOnClickListener(new View.OnClickListener() {
+        SpannableString ss = new SpannableString(getString(R.string.learn_more_here));
+        ClickableSpan clickableSpan = new ClickableSpan() {
             @Override
-            public void onClick(View v) {
+            public void onClick(@NonNull View textView) {
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_VIEW);
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);
                 intent.setData(Uri.parse(finalUrl));
                 startActivity(intent);
             }
-        });
+            @Override
+            public void updateDrawState(@NonNull TextPaint ds) {
+                super.updateDrawState(ds);
+                ds.setUnderlineText(false);
+                ds.setColor(getResources().getColor(R.color.uncw_yellow));
+            }
+        };
+        ss.setSpan(clickableSpan, 21, link.length()-1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        link.setText(ss);
+        link.setMovementMethod(LinkMovementMethod.getInstance());
     }
 }
