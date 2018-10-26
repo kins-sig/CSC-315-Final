@@ -1,7 +1,5 @@
 <resources>
-    <!--
-    Commonly used strings
-    -->
+    <!--Commonly used strings-->
     <string name="app_name">SeahawkTours</string>
     <string name="title_activity_cis">CisActivity</string>
     <string name="go_button_text">Go</string>
@@ -9,9 +7,7 @@
     <string name="cis_building_front_image">Front view of the CIS building</string>
     <string name="welcome">Ready to learn more about your favorite UNCW buildings? Select a building from above and hit "Go"! Wings up!</string>
     <string name="uncw_logo">UNCW logo</string>
-    <!--
-    All building names
-    -->
+    <!--All building names-->
     <string-array name="buildings">
         <item>Select a building</item>
         <item>Alderman Hall</item>
@@ -19,8 +15,56 @@
         <item>Belk Hall</item>
         <item>Computer Information Systems</item>
         <item>Trask Coliseum</item>
-
     </string-array>
+
+    <!--Alderman Hall building information-->
+    <string name="alderman_building"><big><b>Alderman Hall</b></big></string>
+    <!--Image resource is loaded from the drawable.-->
+    <string name="alderman_caption">Alderman Hall circa 1970</string>
+    <string name="alderman_description"><b>Building History</b>
+        \n\nAlderman Hall was one of the three original buildings erected on campus along with James and Hoggard Halls. The building was occupied in 1961 and dedicated in June of 1970. The original function for this building, as administrative offices, is much the same as
+        its current use. The first library for Wilmington College was located on the lower floor of Alderman Hall until the 1968 opening of Randall Library.
+        \n\n
+        <b>Namesake</b>
+        \n\nIn 1861, Dr. Edwin Alderman was born in a house on 3rd Street in Wilmington near St. John\'s Episcopal Church. As a child he developed close ties with the Rev. Joseph Wilson and his son, future United States president, Woodrow Wilson.
+        He graduated from Bethel Military Academy of Virginia in 1879 and went on to attend the University of North Carolina where he received his bachelor degree in 1882. He earned his DCL from University of the South in 1891. Among his recognitions were honorary awards,
+        including LLDs from Tulane (1899), Johns Hopkins (1902) and Columbia (1905). He was a professor of pedagogy at the University of North Carolina and a professor of history and philosophy at Tulane University. He served as president at three southern universities;
+        University of North Carolina, 6th president (1896-1900), Tulane University, 3rd president (1900-1904) and 1st president of University of Virginia (1904-1931). In 1924, Dr. Alderman delivered the memorial address to congress on President Wilson\'s death.
+        Dedicated to his belief in education for all, this building was named to reflect a native of this area and his contributions to higher academics.
+        \n</string>
+    <string name="alderman_url">https://library.uncw.edu/web/collections/archives/bnl/7.html</string>
+
+    <!--Bear Hall building information-->
+    <string name="bear_building"><big><b>Bear Hall</b></big></string>
+    <!--Image resource is loaded from the drawable.-->
+    <string name="bear_caption">Bear Hall circa 1999</string>
+    <string name="bear_description"><b>Building History</b>
+        \n\nBear Hall opened at its present site in 1972 as the home for the Business and Economics Departments. Currently, the Departments of Computer Science, Mathematics &amp; Statistics, and Philosophy &amp; Religion occupy classrooms, teaching labs and faculty offices.
+        The College of Arts and Science also resides here.
+        \n\n
+        <b>Namesake</b>
+        \n\nAs the inscription on the plaque states Bear Hall is named for, "The original Isaac Bear Building, located at Market and 13th Streets, served as the first home of Wilmington College, outside the public school system. Classes were first held there in 1947."
+        Constructed in 1912, the name of the first building was given by Samuel Bear, Jr. (1854-1916) as a memorial to his brother, Isaac Bear. The Bear family, owners of an intrastate wholesale dry goods firm located on Front Street, made a number of large donations to
+        better the community such as a wing to James Walker Memorial Hospital. Isaac Bear was known as "one of Wilmington's most capable and highly esteemed businessmen." He was a member of North State Lodge of B\'Nai Brith, past Grand President of District Grand Lodge,
+        and B.P.O.E Elks #532. Upon his death, the Isaac Bear Memorial School served to remember "the close friendship and devotion between the brothers and their interest in public welfare." The Order of the Isaac Bear is an honorary organization composed of faculty members
+        that taught at the site of the original Wilmington College. Once the college built the new campus off of College Road, the Isaac Bear Building was torn down (1961).
+        \n</string>
+    <string name="bear_url">https://library.uncw.edu/web/collections/archives/bnl/19.html</string>
+
+    <!--Belk Hall building information-->
+    <string name="belk_building"><big><b>Belk Hall</b></big></string>
+    <!--Image resource is loaded from the drawable.-->
+    <string name="belk_caption">Belk Hall circa 2004</string>
+    <string name="belk_description"><b>Building History</b>
+        \n\nBelk Hall opened during the 1976-77 academic year. This residence hall, which accommodates 200 students, was the second dormitory on the UNC Wilmington campus.
+        \n\n
+        <b>Namesake</b>
+        \n\nMrs. Mary Belk was the wife of Mr. William Henry Belk, who founded Belk Department Stores in 1888. Her son, Mr. Irwin Belk named this residence hall in honor of his mother, who was a schoolteacher. Mr. Irwin Belk, a 1945 graduate of
+        University of North Carolina Chapel Hill, is a retired president of the Belk Group of Department Stores. He was also a member of the US Olympic Committee, served on the UNC Board of Governors and the President of the American Cancer Society for over 40 years.
+        He was a North Carolina State Senator and a US Delegate to the 54th United Nations General Assembly. The Belk family has generously contributed to numerous schools within the UNC system.
+        \n</string>
+    <string name="belk_url">https://library.uncw.edu/web/collections/archives/bnl/28.html</string>
+
     <!--Computer Information Systems building information-->
     <string name="cis_building"><big><b>Computer Information Systems</b></big></string>
     <!--Image resource is loaded from the drawable.-->
@@ -35,6 +79,8 @@
         \n\nThe Department of Computer Science and the Department of Information Systems &amp; Operations Management are housed at CIS together and are jointly offering a Master of Science in Computer Science Information Systems (MSCSIS) degree,
         an intensive graduate program aimed at preparing the student to assume leadership roles in the development and implementation of computer and information systems.
         \n</string>
+    <string name="cis_url">https://library.uncw.edu/web/collections/archives/bnl/cis.html</string>
+
     <!--Trask Colesium building information-->
     <string name="trask_building"><big><b>Trask Coliseum</b></big></string>
     <!--Image resource is loaded from the drawable.-->
@@ -56,46 +102,6 @@
         \n\nNamed for local attorney, George Rountree III and former Wilmington Mayor, David Jones, the Rountree-Jones Complex is the modern locker room for the men\'s varsity basketball team. Mr. Rountree, a Wilmington native, earned his law degree from the
         University of Arizona, where he a former basketball player. Mr. Jones, a local developer and businessman is a generous supporter of UNCW.
         \n</string>
-    <!--Bear Hall building information-->
-    <string name="bear_building"><big><b>Bear Hall</b></big></string>
-    <!--Image resource is loaded from the drawable.-->
-    <string name="bear_caption">Bear Hall circa 1999</string>
-    <string name="bear_description"><b>Building History</b>
-        \n\nBear Hall opened at its present site in 1972 as the home for the Business and Economics Departments. Currently, the Departments of Computer Science, Mathematics &amp; Statistics, and Philosophy &amp; Religion occupy classrooms, teaching labs and faculty offices.
-        The College of Arts and Science also resides here.
-        \n\n
-        <b>Namesake</b>
-        \n\nAs the inscription on the plaque states Bear Hall is named for, "The original Isaac Bear Building, located at Market and 13th Streets, served as the first home of Wilmington College, outside the public school system. Classes were first held there in 1947."
-        Constructed in 1912, the name of the first building was given by Samuel Bear, Jr. (1854-1916) as a memorial to his brother, Isaac Bear. The Bear family, owners of an intrastate wholesale dry goods firm located on Front Street, made a number of large donations to
-        better the community such as a wing to James Walker Memorial Hospital. Isaac Bear was known as "one of Wilmington's most capable and highly esteemed businessmen." He was a member of North State Lodge of B\'Nai Brith, past Grand President of District Grand Lodge,
-        and B.P.O.E Elks #532. Upon his death, the Isaac Bear Memorial School served to remember "the close friendship and devotion between the brothers and their interest in public welfare." The Order of the Isaac Bear is an honorary organization composed of faculty members
-        that taught at the site of the original Wilmington College. Once the college built the new campus off of College Road, the Isaac Bear Building was torn down (1961).
-        \n</string>
-    <!--Alderman Hall building information-->
-    <string name="alderman_building"><big><b>Alderman Hall</b></big></string>
-    <!--Image resource is loaded from the drawable.-->
-    <string name="alderman_caption">Alderman Hall circa 1970</string>
-    <string name="alderman_description"><b>Building History</b>
-        \n\nAlderman Hall was one of the three original buildings erected on campus along with James and Hoggard Halls. The building was occupied in 1961 and dedicated in June of 1970. The original function for this building, as administrative offices, is much the same as
-        its current use. The first library for Wilmington College was located on the lower floor of Alderman Hall until the 1968 opening of Randall Library.
-        \n\n
-        <b>Namesake</b>
-        \n\nIn 1861, Dr. Edwin Alderman was born in a house on 3rd Street in Wilmington near St. John\'s Episcopal Church. As a child he developed close ties with the Rev. Joseph Wilson and his son, future United States president, Woodrow Wilson.
-        He graduated from Bethel Military Academy of Virginia in 1879 and went on to attend the University of North Carolina where he received his bachelor degree in 1882. He earned his DCL from University of the South in 1891. Among his recognitions were honorary awards,
-        including LLDs from Tulane (1899), Johns Hopkins (1902) and Columbia (1905). He was a professor of pedagogy at the University of North Carolina and a professor of history and philosophy at Tulane University. He served as president at three southern universities;
-        University of North Carolina, 6th president (1896-1900), Tulane University, 3rd president (1900-1904) and 1st president of University of Virginia (1904-1931). In 1924, Dr. Alderman delivered the memorial address to congress on President Wilson\'s death.
-        Dedicated to his belief in education for all, this building was named to reflect a native of this area and his contributions to higher academics.
-        \n</string>
-    <!--Belk Hall building information-->
-    <string name="belk_building"><big><b>Belk Hall</b></big></string>
-    <!--Image resource is loaded from the drawable.-->
-    <string name="belk_caption">Belk Hall circa 2004</string>
-    <string name="belk_description"><b>Building History</b>
-        \n\nBelk Hall opened during the 1976-77 academic year. This residence hall, which accommodates 200 students, was the second dormitory on the UNC Wilmington campus.
-        \n\n
-        <b>Namesake</b>
-        \n\nMrs. Mary Belk was the wife of Mr. William Henry Belk, who founded Belk Department Stores in 1888. Her son, Mr. Irwin Belk named this residence hall in honor of his mother, who was a schoolteacher. Mr. Irwin Belk, a 1945 graduate of
-        University of North Carolina Chapel Hill, is a retired president of the Belk Group of Department Stores. He was also a member of the US Olympic Committee, served on the UNC Board of Governors and the President of the American Cancer Society for over 40 years.
-        He was a North Carolina State Senator and a US Delegate to the 54th United Nations General Assembly. The Belk family has generously contributed to numerous schools within the UNC system.
-        \n</string>
+    <string name="trask_url">https://library.uncw.edu/web/collections/archives/bnl/10.html</string>
+
 </resources>
