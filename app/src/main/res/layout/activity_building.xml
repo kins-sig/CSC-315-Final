@@ -58,7 +58,4 @@
             android:textColor="@color/text_color"
             android:textSize="@dimen/standard_font" />
     </RelativeLayout>
-
-
-
 </android.support.v4.widget.NestedScrollView>
