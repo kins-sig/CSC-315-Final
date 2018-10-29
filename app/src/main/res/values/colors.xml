@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="color_primary">#008577</color>
-    <color name="color_primary_dark">#00574B</color>
+    <color name="color_primary">#02bca9</color>
+    <color name="color_primary_dark">#00806e</color>
     <color name="color_accent">#D81B60</color>
     <color name="uncw_yellow">#ffda06</color>
     <color name="uncw_yellow_dark">#f1b110</color>
@@ -11,6 +11,7 @@
     <color name="uncw_yellow_button_pressed_end">#FAFF69</color>
     <color name="text_color">#000000</color>
     <color name="caption_color">#292828</color>
+    <color name="white_text">#ffffff</color>
     <array name="standard_background">
         <item>@color/color_primary</item>
         <item>@color/color_primary_dark</item>
