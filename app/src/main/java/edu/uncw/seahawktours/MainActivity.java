@@ -4,8 +4,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
+
+import java.util.ArrayList;
 
 public class MainActivity extends Activity {
 
@@ -13,41 +19,22 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Spinner buildings = findViewById(R.id.buildings);
+        String[] spinnerArray = getResources().getStringArray(R.array.buildings);
+        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, spinnerArray);
+        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        buildings.setAdapter(spinnerArrayAdapter);
     }
 
-    public void onClickDisplayBuilding(View view) {
-        //Get a reference to the Spinner
+    public void onClickDisplayBuilding(View view){
         Spinner buildings = findViewById(R.id.buildings);
-        //Get the selected building in the Spinner
-        String selectedBuilding = String.valueOf(buildings.getSelectedItem());
-        String building;
         final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.whoosh);
-        if (selectedBuilding.equals(getString(R.string.cis_building))){
-            building = getString(R.string.cis_building);
-            startIntent(building);
-            mediaPlayer.start();
-        }
-        else if (selectedBuilding.equals(getString(R.string.trask_building))){
-            building = getString(R.string.trask_building);
-            startIntent(building);
-            mediaPlayer.start();
-        }
-        else if (selectedBuilding.equals(getString(R.string.bear_building))){
-            building = getString(R.string.bear_building);
-            startIntent(building);
-            mediaPlayer.start();
-        }
-        else if (selectedBuilding.equals(getString(R.string.alderman_building))){
-            building = getString(R.string.alderman_building);
-            startIntent(building);
-            mediaPlayer.start();
-        }
-        else if (selectedBuilding.equals(getString(R.string.belk_building))){
-            building = getString(R.string.belk_building);
-            startIntent(building);
-            mediaPlayer.start();
-        }
+        Intent intent = new Intent(MainActivity.this, BuildingActivity.class);
+        intent.putExtra("building", String.valueOf(buildings.getSelectedItem()));
+        startIntent(String.valueOf(buildings.getSelectedItem()));
+        mediaPlayer.start();
     }
+
     private void startIntent(String building){
         Intent intent = new Intent(MainActivity.this, BuildingActivity.class);
         intent.putExtra("building", building);
