@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextPaint;
@@ -25,6 +26,15 @@ public class BuildingActivity extends AppCompatActivity {
         TextView buildingCaption = findViewById(R.id.building_caption);
         TextView buildingDescription = findViewById(R.id.building_description);
         TextView link = findViewById(R.id.building_url);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setNavigationIcon(R.drawable.home);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BuildingActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
         String url = null;
         Bundle bundle = getIntent().getExtras();
         assert bundle != null;

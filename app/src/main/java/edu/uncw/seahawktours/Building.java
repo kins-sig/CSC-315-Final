@@ -27,6 +27,10 @@ public class Building {
         this.url = url;
     }
 
+    public static void setRes(Resources res) {
+        Building.res = res;
+    }
+
     public String getName() {
         return name;
     }
