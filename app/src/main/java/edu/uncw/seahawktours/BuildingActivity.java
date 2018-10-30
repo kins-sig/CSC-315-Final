@@ -66,26 +66,26 @@ public class BuildingActivity extends Activity {
             url = getString(R.string.belk_url);
         }
 
-        final String finalUrl = url;
-        SpannableString ss = new SpannableString(getString(R.string.learn_more_here));
-        ClickableSpan clickableSpan = new ClickableSpan() {
-            @Override
-            public void onClick(@NonNull View textView) {
-                Intent intent = new Intent();
-                intent.setAction(Intent.ACTION_VIEW);
-                intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                intent.setData(Uri.parse(finalUrl));
-                startActivity(intent);
-            }
-            @Override
-            public void updateDrawState(@NonNull TextPaint ds) {
-                super.updateDrawState(ds);
-                ds.setUnderlineText(false);
-                ds.setColor(getResources().getColor(R.color.uncw_yellow));
-            }
-        };
-        ss.setSpan(clickableSpan, 21, link.length()-1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        link.setText(ss);
-        link.setMovementMethod(LinkMovementMethod.getInstance());
+//        final String finalUrl = url;
+//        SpannableString ss = new SpannableString(getString(R.string.learn_more_here));
+//        ClickableSpan clickableSpan = new ClickableSpan() {
+//            @Override
+//            public void onClick(@NonNull View textView) {
+//                Intent intent = new Intent();
+//                intent.setAction(Intent.ACTION_VIEW);
+//                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+//                intent.setData(Uri.parse(finalUrl));
+//                startActivity(intent);
+//            }
+//            @Override
+//            public void updateDrawState(@NonNull TextPaint ds) {
+//                super.updateDrawState(ds);
+//                ds.setUnderlineText(false);
+//                ds.setColor(getResources().getColor(R.color.uncw_yellow));
+//            }
+//        };
+//        ss.setSpan(clickableSpan, 21, link.length()-1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+//        link.setText(ss);
+//        link.setMovementMethod(LinkMovementMethod.getInstance());
     }
 }
