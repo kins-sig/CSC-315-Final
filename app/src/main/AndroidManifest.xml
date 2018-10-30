@@ -18,8 +18,7 @@
         </activity>
         <activity
             android:name=".BuildingActivity"
-            android:label="@string/title_activity_cis" />
-        <activity android:name=".AboutActivity"></activity>
+            android:label="@string/title_activity_cis"></activity>
     </application>
 
 </manifest>

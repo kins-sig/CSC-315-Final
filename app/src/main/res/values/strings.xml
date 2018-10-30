@@ -1,6 +1,6 @@
 <resources>
     <!--Commonly used strings-->
-    <string name="app_name">SeahawkTours</string>
+    <string name="app_name">Seahawk Tours</string>
     <string name="title_activity_cis">CisActivity</string>
     <string name="go_button_text">Go</string>
     <string name="uncw_main_logo_description">UNCW logo in teal and blue</string>
