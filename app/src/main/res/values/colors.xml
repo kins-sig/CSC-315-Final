@@ -11,7 +11,7 @@
     <color name="uncw_yellow_button_pressed_end">#FAFF69</color>
     <color name="text_color">#000000</color>
     <color name="caption_color">#292828</color>
-    <color name="white_text">#ffffff</color>
+    <color name="navy">#062351</color>
     <array name="standard_background">
         <item>@color/color_primary</item>
         <item>@color/color_primary_dark</item>
