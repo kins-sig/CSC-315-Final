@@ -95,7 +95,7 @@ public class BuildingActivity extends AppCompatActivity {
                 ds.setColor(getResources().getColor(R.color.uncw_yellow));
             }
         };
-        ss.setSpan(clickableSpan, 21, ss.length()-1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ss.setSpan(clickableSpan, 21, ss.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         link.setText(ss);
         link.setMovementMethod(LinkMovementMethod.getInstance());
     }

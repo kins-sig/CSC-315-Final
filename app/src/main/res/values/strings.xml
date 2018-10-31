@@ -7,7 +7,7 @@
     <string name="cis_building_front_image">Front view of the CIS building</string>
     <string name="welcome">Ready to learn more about your favorite UNCW buildings? Select a building from above and hit "Go"! Wings up!</string>
     <string name="uncw_logo">UNCW logo</string>
-    <string name="learn_more_here">For more information\nclick here.</string>
+    <string name="learn_more_here">For more information\nclick here</string>
     <string name="default_building">Select a building</string>
     <!--All building names-->
     <string-array name="buildings">
