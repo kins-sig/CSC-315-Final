@@ -37,10 +37,12 @@ public class MainActivity extends AppCompatActivity {
     public void onClickDisplayBuilding(View view){
         Spinner buildings = findViewById(R.id.buildings);
         final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.whoosh);
-        Intent intent = new Intent(MainActivity.this, BuildingActivity.class);
-        intent.putExtra("building", String.valueOf(buildings.getSelectedItem()));
-        startIntent(String.valueOf(buildings.getSelectedItem()));
-        mediaPlayer.start();
+        if(!buildings.getSelectedItem().toString().equals(getString(R.string.default_building))) {
+            Intent intent = new Intent(MainActivity.this, BuildingActivity.class);
+            intent.putExtra("building", String.valueOf(buildings.getSelectedItem()));
+            startIntent(String.valueOf(buildings.getSelectedItem()));
+            mediaPlayer.start();
+        }
     }
 
     private void startIntent(String building){
