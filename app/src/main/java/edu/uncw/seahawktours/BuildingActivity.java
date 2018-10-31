@@ -27,6 +27,7 @@ public class BuildingActivity extends AppCompatActivity {
         TextView buildingDescription = findViewById(R.id.building_description);
         TextView link = findViewById(R.id.building_url);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.home);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_color"
     tools:context=".BuildingActivity">
 
     <android.support.constraint.ConstraintLayout
@@ -28,7 +29,7 @@
             android:textAllCaps="true"
             android:textSize="@dimen/large_font"
             android:textStyle="bold"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
         <ImageView
@@ -42,7 +43,7 @@
             android:src="@drawable/seahawk_full_logo"
             android:contentDescription="@string/cis_building_front_image"
             app:layout_constraintStart_toEndOf="@id/toolbar"
-            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+            app:layout_constraintTop_toBottomOf="@id/building_name" />
         <TextView
             android:id="@+id/building_caption"
             android:layout_width="wrap_content"

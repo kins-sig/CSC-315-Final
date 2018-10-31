@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         buildings.setAdapter(spinnerArrayAdapter);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.home);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

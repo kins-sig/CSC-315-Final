@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_color"
     tools:context=".BuildingActivity">
 
     <android.support.constraint.ConstraintLayout
@@ -14,6 +15,20 @@
         <include
             layout="@layout/toolbar_main"
             android:id="@+id/toolbar" />
+
+        <ImageView
+            android:id="@+id/building_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/seahawk_full_logo"
+            android:contentDescription="@string/cis_building_front_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/building_name" />
 
         <TextView
             android:id="@+id/building_name"
@@ -32,19 +47,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
 
-        <ImageView
-            android:id="@+id/building_image"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:src="@drawable/seahawk_full_logo"
-            android:contentDescription="@string/cis_building_front_image"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/building_name" />
+
 
         <TextView
             android:id="@+id/building_caption"
