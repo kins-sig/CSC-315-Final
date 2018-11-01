@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.SpannableString;
@@ -30,15 +31,9 @@ public class BuildingActivity extends AppCompatActivity {
         TextView link = findViewById(R.id.building_url);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setNavigationIcon(R.drawable.ic_home);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(BuildingActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
-
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar == null) throw new AssertionError();
+        actionBar.setDisplayHomeAsUpEnabled(true);
         String url = null;
         Bundle bundle = getIntent().getExtras();
         assert bundle != null;
@@ -101,9 +96,8 @@ public class BuildingActivity extends AppCompatActivity {
         ss.setSpan(clickableSpan, 21, ss.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         link.setText(ss);
         link.setMovementMethod(LinkMovementMethod.getInstance());
-
-
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar_menu, menu);

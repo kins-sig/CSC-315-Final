@@ -5,6 +5,5 @@
     android:layout_height="?attr/actionBarSize"
     android:background="@null"
     android:theme="@style/SeahawkTours"
-    app:navigationIcon="?attr/homeAsUpIndicator"
     app:title="@string/app_name"
     android:layout_marginStart="@dimen/activity_horizontal_margin"/>
