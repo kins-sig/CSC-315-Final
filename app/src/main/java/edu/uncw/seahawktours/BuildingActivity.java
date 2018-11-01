@@ -29,11 +29,13 @@ public class BuildingActivity extends AppCompatActivity {
         TextView buildingCaption = findViewById(R.id.building_caption);
         TextView buildingDescription = findViewById(R.id.building_description);
         TextView link = findViewById(R.id.building_url);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar == null) throw new AssertionError();
         actionBar.setDisplayHomeAsUpEnabled(true);
+
         String url = null;
         Bundle bundle = getIntent().getExtras();
         assert bundle != null;
