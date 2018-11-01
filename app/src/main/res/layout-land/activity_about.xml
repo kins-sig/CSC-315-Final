@@ -39,7 +39,7 @@
         android:layout_height="100dp"
         android:layout_gravity="center"
         android:contentDescription="@string/kinsley_picture"
-        android:src="@drawable/kinsley_loose"
+        android:src="@drawable/kinsley"
         app:layout_constraintStart_toStartOf="@+id/toolbar"
         app:layout_constraintTop_toBottomOf="@+id/image1" />
 

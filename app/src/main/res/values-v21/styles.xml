@@ -7,8 +7,6 @@
         <item name="colorPrimaryDark">@color/color_primary_dark</item>
         <item name='colorAccent'>@color/uncw_yellow</item>
         <item name="android:textColor">@color/navy</item>
-        <item name="android:button">@drawable/button_shape</item>
-
     </style>
 
 </resources>
