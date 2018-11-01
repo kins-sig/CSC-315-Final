@@ -21,12 +21,13 @@ import android.support.v7.widget.ShareActionProvider;
 import android.support.v4.view.MenuItemCompat;
 
 public class BuildingActivity extends AppCompatActivity {
+
     private String url;
+    final String finalUrl = url;
     public void setUrl(String url) {
         this.url = url;
     }
 
-    final String finalUrl = url;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
