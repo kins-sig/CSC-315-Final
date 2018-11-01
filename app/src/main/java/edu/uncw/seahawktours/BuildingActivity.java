@@ -11,6 +11,8 @@ import android.text.Spanned;
 import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -28,14 +30,7 @@ public class BuildingActivity extends AppCompatActivity {
         TextView link = findViewById(R.id.building_url);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setNavigationIcon(R.drawable.home);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(BuildingActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
+
         String url = null;
         Bundle bundle = getIntent().getExtras();
         assert bundle != null;
@@ -98,5 +93,25 @@ public class BuildingActivity extends AppCompatActivity {
         ss.setSpan(clickableSpan, 21, ss.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         link.setText(ss);
         link.setMovementMethod(LinkMovementMethod.getInstance());
+
+
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()) {
+            case R.id.menu_home:
+                startActivity(new Intent(BuildingActivity.this, MainActivity.class));
+                return true;
+            case R.id.menu_about:
+                startActivity(new Intent(BuildingActivity.this, AboutActivity.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

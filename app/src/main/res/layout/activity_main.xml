@@ -10,7 +10,8 @@
 
     <include
         layout="@layout/toolbar_main"
-        android:id="@+id/toolbar" />
+        android:id="@+id/toolbar"
+        />
 
     <ImageView
         android:id="@+id/uncw_main_logo"
