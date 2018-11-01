@@ -18,7 +18,7 @@
     <string name="joren_picture">Joren picture</string>
     <string name="created_by">Created by:</string>
     <string name="menu_share">Share</string>
-    <string name="check_out_building">Check out </string>
+    <string name="check_out_building">Check out\u0020</string>
     <!--All building names-->
     <string-array name="buildings">
         <item>Select a building</item>
