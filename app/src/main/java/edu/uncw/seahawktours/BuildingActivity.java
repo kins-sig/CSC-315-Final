@@ -30,6 +30,14 @@ public class BuildingActivity extends AppCompatActivity {
         TextView link = findViewById(R.id.building_url);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_home);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BuildingActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         String url = null;
         Bundle bundle = getIntent().getExtras();
@@ -104,9 +112,6 @@ public class BuildingActivity extends AppCompatActivity {
 
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()) {
-            case R.id.menu_home:
-                startActivity(new Intent(BuildingActivity.this, MainActivity.class));
-                return true;
             case R.id.menu_about:
                 startActivity(new Intent(BuildingActivity.this, AboutActivity.class));
                 return true;

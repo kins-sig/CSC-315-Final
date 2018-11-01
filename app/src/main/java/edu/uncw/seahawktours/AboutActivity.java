@@ -24,9 +24,17 @@ public class AboutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_about);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_home);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AboutActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         TextView link = findViewById(R.id.uncw_buildings_website);
-        SpannableString ss = new SpannableString(getString(R.string.learn_more_here));
+        SpannableString ss = new SpannableString(getString(R.string.uncw_buildings_website_text));
         ClickableSpan clickableSpan = new ClickableSpan() {
             @Override
             public void onClick(@NonNull View textView) {
@@ -43,7 +51,7 @@ public class AboutActivity extends AppCompatActivity {
                 ds.setColor(getResources().getColor(R.color.uncw_yellow));
             }
         };
-        ss.setSpan(clickableSpan, 21, ss.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ss.setSpan(clickableSpan, 53, ss.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         link.setText(ss);
         link.setMovementMethod(LinkMovementMethod.getInstance());
     }
@@ -56,9 +64,6 @@ public class AboutActivity extends AppCompatActivity {
 
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()) {
-            case R.id.menu_home:
-                startActivity(new Intent(AboutActivity.this, MainActivity.class));
-                return true;
             case R.id.menu_about:
                 startActivity(new Intent(AboutActivity.this, AboutActivity.class));
                 return true;

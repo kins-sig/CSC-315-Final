@@ -9,7 +9,13 @@
     <string name="uncw_logo">UNCW logo</string>
     <string name="learn_more_here">For more information\nclick here</string>
     <string name="default_building">Select a building</string>
-    <string name="uncw_buildings_website">https://library.uncw.edu/web/collections/archives/landmarks.html</string>
+    <string name="uncw_buildings_website">https://library.uncw.edu/archives_special/archives</string>
+    <string name="joren_mcsorley">Joren McSorley</string>
+    <string name="kinsley_sigmund">Kinsley Sigmund</string>
+    <string name="home_button">a home button</string>
+    <string name="uncw_buildings_website_text">UNCW building information and\nimages courtesy of the\nUNCW University Archives.</string>
+    <string name="kinsley_picture">Kinsley picture</string>
+    <string name="joren_picture">Joren picture</string>
     <!--All building names-->
     <string-array name="buildings">
         <item>Select a building</item>
@@ -106,11 +112,4 @@
         University of Arizona, where he a former basketball player. Mr. Jones, a local developer and businessman is a generous supporter of UNCW.
         \n</string>
     <string name="trask_url">https://library.uncw.edu/web/collections/archives/bnl/10.html\n</string>
-    <string name="joren_mcsorley">Joren McSorley</string>
-    <string name="kinsley_sigmund">Kinsley Sigmund</string>
-    <string name="home_button">a home button</string>
-    <string name="uncw_buildings_website_text">Images courtesy of make this work</string>
-    <string name="kinsley_picture">Kinsley picture</string>
-    <string name="joren_picture">Joren picture</string>
-
 </resources>
