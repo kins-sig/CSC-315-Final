@@ -12,34 +12,48 @@
         layout="@layout/toolbar_main"
         android:id="@+id/toolbar" />
 
+    <TextView
+        android:id="@+id/created_by"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="@string/created_by"
+        android:textAllCaps="true"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
     <ImageView
         android:id="@+id/image1"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/joren_picture"
         android:src="@drawable/joren_bad_haircut_baby"
         app:layout_constraintStart_toStartOf="@+id/toolbar"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/created_by" />
 
     <TextView
         android:id="@+id/author1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="@string/joren_mcsorley"
-        android:textColor="@color/text_color"
-        android:textSize="@dimen/standard_font"
+        android:textColor="@android:color/background_light"
         app:layout_constraintStart_toEndOf="@id/image1"
         app:layout_constraintTop_toTopOf="@+id/image1" />
 
     <ImageView
         android:id="@+id/image2"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_gravity="center"
         android:contentDescription="@string/kinsley_picture"
-        android:src="@drawable/kinsley_loose"
+        android:src="@drawable/kinsley"
         app:layout_constraintStart_toStartOf="@+id/toolbar"
         app:layout_constraintTop_toBottomOf="@+id/image1" />
 
@@ -49,9 +63,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="@string/kinsley_sigmund"
-        android:textColor="@color/text_color"
-        android:textSize="@dimen/standard_font"
+        android:textColor="@android:color/background_light"
         app:layout_constraintStart_toEndOf="@id/image2"
         app:layout_constraintTop_toTopOf="@id/image2" />
 

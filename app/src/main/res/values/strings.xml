@@ -112,5 +112,6 @@
     <string name="uncw_buildings_website_text">Images courtesy of make this work</string>
     <string name="kinsley_picture">Kinsley picture</string>
     <string name="joren_picture">Joren picture</string>
+    <string name="created_by">Created by: </string>
 
 </resources>
