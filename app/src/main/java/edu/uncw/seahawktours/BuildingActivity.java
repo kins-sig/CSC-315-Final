@@ -17,6 +17,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.support.v7.widget.ShareActionProvider;
+import android.support.v4.view.MenuItemCompat;
 
 public class BuildingActivity extends AppCompatActivity {
 
@@ -29,13 +31,11 @@ public class BuildingActivity extends AppCompatActivity {
         TextView buildingCaption = findViewById(R.id.building_caption);
         TextView buildingDescription = findViewById(R.id.building_description);
         TextView link = findViewById(R.id.building_url);
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar == null) throw new AssertionError();
         actionBar.setDisplayHomeAsUpEnabled(true);
-
         String url = null;
         Bundle bundle = getIntent().getExtras();
         assert bundle != null;
@@ -100,10 +100,23 @@ public class BuildingActivity extends AppCompatActivity {
         link.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
+    private ShareActionProvider shareActionProvider;
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+        TextView buildingName = findViewById(R.id.building_name);
+        getMenuInflater().inflate(R.menu.toolbar_menu_share, menu);
+        MenuItem menuItem = menu.findItem(R.id.menu_share);
+        shareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(menuItem);
+        setShareActionIntent(getText(R.string.check_out_building) + buildingName.getText().toString()+ "\n\n" + "building url here");
         return true;
+    }
+
+    private void setShareActionIntent(String text) {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT, text);
+        shareActionProvider.setShareIntent(intent);
     }
 
     public boolean onOptionsItemSelected(MenuItem item){

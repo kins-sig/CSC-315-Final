@@ -23,13 +23,11 @@ public class AboutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar == null) throw new AssertionError();
         actionBar.setDisplayHomeAsUpEnabled(true);
-
         TextView link = findViewById(R.id.uncw_buildings_website);
         SpannableString ss = new SpannableString(getString(R.string.uncw_buildings_website_text));
         ClickableSpan clickableSpan = new ClickableSpan() {

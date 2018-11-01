@@ -5,7 +5,7 @@
     <color name="color_accent">#D81B60</color>
     <color name="uncw_yellow">#ffda06</color>
     <color name="uncw_yellow_dark">#f1b110</color>
-    <color name="uncw_yellow_button_start">#FFD600</color>
+    <color name="uncw_yellow_button_start">#ffda06</color>
     <color name="uncw_yellow_button_end">#FFE350</color>
     <color name="uncw_yellow_button_pressed_start">#FFFF00</color>
     <color name="uncw_yellow_button_pressed_end">#FAFF69</color>

@@ -23,13 +23,11 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, spinnerArray);
         spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         buildings.setAdapter(spinnerArrayAdapter);
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar == null) throw new AssertionError();
         actionBar.setDisplayHomeAsUpEnabled(false);
-
     }
 
     @Override
