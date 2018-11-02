@@ -16,6 +16,7 @@
     <string name="uncw_buildings_website_text">UNCW building information and\nimages courtesy of the\nUNCW University Archives.</string>
     <string name="kinsley_picture">Kinsley picture</string>
     <string name="joren_picture">Joren picture</string>
+    <string name="title_about_activity">About </string>
     <!--All building names-->
     <string-array name="buildings">
         <item>Select a building</item>
