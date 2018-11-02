@@ -16,12 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".BuildingActivity"
-            android:label="@string/title_activity_cis"/>
-        <activity
-            android:name=".AboutActivity"
-            android:label="@string/title_about_activity"/>
+        <activity android:name=".BuildingActivity"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity android:name=".AboutActivity"
+            android:parentActivityName=".MainActivity">
+        </activity>
     </application>
 
 </manifest>
