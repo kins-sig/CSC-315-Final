@@ -50,4 +50,6 @@ public class Building {
     public String getUrl() {
         return url;
     }
+
+
 }

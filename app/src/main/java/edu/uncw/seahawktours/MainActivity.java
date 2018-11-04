@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(false);
     }
 
-    @Override
+   @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar_menu, menu);
         return true;
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void onClickDisplayBuilding(View view){
+   public void onClickDisplayBuilding(View view){
         Spinner buildings = findViewById(R.id.buildings);
         final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.whoosh);
         if(!buildings.getSelectedItem().toString().equals(getString(R.string.default_building))) {

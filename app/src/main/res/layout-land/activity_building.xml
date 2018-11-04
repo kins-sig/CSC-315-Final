@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_color"
     tools:context=".BuildingActivity">
 
     <android.support.constraint.ConstraintLayout
@@ -24,14 +23,11 @@
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
             android:layout_gravity="center"
-            android:fontFamily="sans-serif-condensed"
-            android:text=""
-            android:textAllCaps="true"
-            android:textSize="@dimen/large_font"
-            android:textStyle="bold"
+            android:theme="@style/title_text"
             app:layout_constraintTop_toBottomOf="@id/toolbar"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
+
         <ImageView
             android:id="@+id/building_image"
             android:layout_width="match_parent"
@@ -44,6 +40,7 @@
             android:contentDescription="@string/cis_building_front_image"
             app:layout_constraintStart_toEndOf="@id/toolbar"
             app:layout_constraintTop_toBottomOf="@id/building_name" />
+
         <TextView
             android:id="@+id/building_caption"
             android:layout_width="wrap_content"
@@ -52,9 +49,7 @@
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
             android:layout_gravity="center"
-            android:text=""
-            android:textColor="@color/caption_color"
-            android:textSize="@dimen/caption_font"
+            android:theme="@style/caption_text"
             app:layout_constraintTop_toBottomOf="@+id/building_image"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
@@ -67,9 +62,7 @@
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
             android:layout_gravity="center"
-            android:text=""
-            android:textColor="@color/text_color"
-            android:textSize="@dimen/standard_font"
+            android:theme="@style/body_text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/building_caption" />
@@ -103,5 +96,6 @@
             app:layout_constraintTop_toBottomOf="@id/building_url"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
+
     </android.support.constraint.ConstraintLayout>
 </android.support.v4.widget.NestedScrollView>

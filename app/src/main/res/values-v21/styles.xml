@@ -7,4 +7,32 @@
         <item name="android:textSize">@dimen/standard_font</item>
     </style>
 
+    <style name="title_text">
+        <item name="android:textSize">@dimen/large_font</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:text">""</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/color_primary_dark</item>
+    </style>
+
+    <style name="body_text">
+        <item name="android:text">""</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">@dimen/standard_font</item>
+    </style>
+
+    <style name= "caption_text">
+        <item name="android:text">""</item>
+        <item name="android:textColor">@color/caption_color</item>
+        <item name="android:textSize">@dimen/caption_font</item>
+    </style>
+
+    <style name="app_title">
+        <item name ="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/large_font</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

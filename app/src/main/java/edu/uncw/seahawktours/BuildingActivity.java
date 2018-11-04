@@ -24,14 +24,17 @@ public class BuildingActivity extends AppCompatActivity {
 
     private String url;
     final String finalUrl = url;
+
     public void setUrl(String url) {
         this.url = url;
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_building);
+
         TextView buildingName = findViewById(R.id.building_name);
         ImageView buildingImage = findViewById(R.id.building_image);
         TextView buildingCaption = findViewById(R.id.building_caption);
@@ -46,36 +49,32 @@ public class BuildingActivity extends AppCompatActivity {
         assert bundle != null;
         String message = bundle.getString("building");
         assert message != null;
-        if (message.equals(getString(R.string.cis_building))){
+        if (message.equals(getString(R.string.cis_building))) {
             buildingName.setText(R.string.cis_building);
             buildingImage.setImageResource(R.drawable.cis_building);
             buildingCaption.setText(R.string.cis_caption);
             buildingDescription.setText(R.string.cis_description);
             setUrl(getString(R.string.cis_url));
 
-        }
-        else if (message.equals(getString(R.string.trask_building))){
+        } else if (message.equals(getString(R.string.trask_building))) {
             buildingName.setText(R.string.trask_building);
             buildingImage.setImageResource(R.drawable.trask_building);
             buildingCaption.setText(R.string.trask_caption);
             buildingDescription.setText(R.string.trask_description);
             setUrl(getString(R.string.trask_url));
-        }
-        else if (message.equals(getString(R.string.bear_building))){
+        } else if (message.equals(getString(R.string.bear_building))) {
             buildingName.setText(R.string.bear_building);
             buildingImage.setImageResource(R.drawable.bear_building);
             buildingCaption.setText(R.string.bear_caption);
             buildingDescription.setText(R.string.bear_description);
             setUrl(getString(R.string.bear_url));
-        }
-        else if (message.equals(getString(R.string.alderman_building))) {
+        } else if (message.equals(getString(R.string.alderman_building))) {
             buildingName.setText(R.string.alderman_building);
             buildingImage.setImageResource(R.drawable.alderman_building);
             buildingCaption.setText(R.string.alderman_caption);
             buildingDescription.setText(R.string.alderman_description);
             setUrl(getString(R.string.alderman_url));
-        }
-        else if (message.equals(getString(R.string.belk_building))) {
+        } else if (message.equals(getString(R.string.belk_building))) {
             buildingName.setText(R.string.belk_building);
             buildingImage.setImageResource(R.drawable.belk_building);
             buildingCaption.setText(R.string.belk_caption);
@@ -83,27 +82,29 @@ public class BuildingActivity extends AppCompatActivity {
             setUrl(getString(R.string.alderman_url));
         }
 
-        SpannableString ss = new SpannableString(getString(R.string.learn_more_here));
-        ClickableSpan clickableSpan = new ClickableSpan() {
-            @Override
-            public void onClick(@NonNull View textView) {
-                Intent intent = new Intent();
-                intent.setAction(Intent.ACTION_VIEW);
-                intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                intent.setData(Uri.parse(finalUrl));
-                startActivity(intent);
-            }
-            @Override
-            public void updateDrawState(@NonNull TextPaint ds) {
-                super.updateDrawState(ds);
-                ds.setUnderlineText(false);
-                ds.setColor(getResources().getColor(R.color.uncw_yellow));
-            }
-        };
-        ss.setSpan(clickableSpan, 21, ss.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+    SpannableString ss = new SpannableString(getString(R.string.learn_more_here));
+    ClickableSpan clickableSpan = new ClickableSpan() {
+        @Override
+        public void onClick(@NonNull View textView) {
+            Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_VIEW);
+            intent.addCategory(Intent.CATEGORY_BROWSABLE);
+            intent.setData(Uri.parse(finalUrl));
+            startActivity(intent);
+        }
+
+        @Override
+        public void updateDrawState(@NonNull TextPaint ds) {
+            super.updateDrawState(ds);
+            ds.setUnderlineText(false);
+            ds.setColor(getResources().getColor(R.color.uncw_yellow));
+        }
+    };
+        ss.setSpan(clickableSpan,21,ss.length(),Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         link.setText(ss);
         link.setMovementMethod(LinkMovementMethod.getInstance());
-    }
+
+}
 
     private ShareActionProvider shareActionProvider;
     @Override
