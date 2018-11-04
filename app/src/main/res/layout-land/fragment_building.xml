@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_color"
     tools:context=".BuildingActivity">
 
     <android.support.constraint.ConstraintLayout
@@ -38,16 +37,10 @@
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
             android:layout_gravity="center"
-            android:fontFamily="sans-serif-condensed"
-            android:text=""
-            android:textAllCaps="true"
-            android:textSize="@dimen/large_font"
-            android:textStyle="bold"
+            android:theme="@style/title_text"
             app:layout_constraintTop_toBottomOf="@+id/toolbar"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
-
-
 
         <TextView
             android:id="@+id/building_caption"
@@ -57,9 +50,7 @@
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
             android:layout_gravity="center"
-            android:text=""
-            android:textColor="@color/caption_color"
-            android:textSize="@dimen/caption_font"
+            android:theme="@style/caption_text"
             app:layout_constraintTop_toBottomOf="@+id/building_image"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -75,9 +66,7 @@
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:layout_gravity="center"
-            android:text=""
-            android:textColor="@color/text_color"
-            android:textSize="@dimen/standard_font"
+            android:theme="@style/body_text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/building_caption" />

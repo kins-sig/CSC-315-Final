@@ -1,92 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/top_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AboutActivity">
+    tools:context=".MainActivity">
 
-    <include
-        layout="@layout/toolbar_main"
-        android:id="@+id/toolbar" />
-
-    <TextView
-        android:id="@+id/created_by"
+    <fragment
+        android:name="edu.uncw.seahawktours.AboutFragment"
+        android:id="@+id/about_fragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_horizontal_margin"
-        android:fontFamily="sans-serif"
-        android:gravity="center"
-        android:text="@string/created_by"
-        android:theme="@style/title_text"
-        android:textColor="@color/uncw_yellow_button_start"
-        app:layout_constraintTop_toBottomOf="@id/toolbar" />
-
-    <ImageView
-        android:id="@+id/image1"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:contentDescription="@string/joren_picture"
-        android:src="@drawable/joren_bad_haircut_baby"
-        app:layout_constraintStart_toStartOf="@+id/toolbar"
-        app:layout_constraintTop_toBottomOf="@+id/created_by" />
-
-    <TextView
-        android:id="@+id/author1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:text="@string/joren_mcsorley"
-        android:theme="@style/title_text"
-        app:layout_constraintStart_toEndOf="@id/image1"
-        app:layout_constraintTop_toTopOf="@+id/image1" />
-
-    <ImageView
-        android:id="@+id/image2"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_gravity="center"
-        android:contentDescription="@string/kinsley_picture"
-        android:src="@drawable/kinsley"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        app:layout_constraintStart_toStartOf="@+id/toolbar"
-        app:layout_constraintTop_toBottomOf="@+id/image1" />
-
-    <TextView
-        android:id="@+id/author2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:text="@string/kinsley_sigmund"
-        android:theme="@style/title_text"
-        app:layout_constraintStart_toEndOf="@id/image2"
-        app:layout_constraintTop_toTopOf="@id/image2" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <ImageView
-            android:id="@+id/seahawk_noback"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginEnd="@dimen/activity_horizontal_margin"
-            android:src="@drawable/seahawk_noback"
-            android:contentDescription="@string/uncw_logo" />
-
-        <TextView
-            android:id="@+id/uncw_buildings_website"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:layout_gravity="center_vertical"
-            android:text="@string/uncw_buildings_website_text" />
-    </LinearLayout>
+        android:layout_height="match_parent"/>
 
 </android.support.constraint.ConstraintLayout>
