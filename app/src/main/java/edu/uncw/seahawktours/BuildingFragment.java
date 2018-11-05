@@ -30,7 +30,7 @@ public class BuildingFragment extends Fragment {
     }
 
     @Override
-    public void onStart(){
+    public void onStart() {
         super.onStart();
     }
 
@@ -43,7 +43,6 @@ public class BuildingFragment extends Fragment {
         ImageView buildingImage = v.findViewById(R.id.building_image);
         TextView buildingCaption = v.findViewById(R.id.building_caption);
         TextView buildingDescription = v.findViewById(R.id.building_description);
-
         Toolbar toolbar = v.findViewById(R.id.toolbar);
         ((AppCompatActivity) Objects.requireNonNull(getActivity())).setSupportActionBar(toolbar);
         ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
@@ -104,11 +103,12 @@ public class BuildingFragment extends Fragment {
                 ds.setColor(getResources().getColor(R.color.uncw_yellow));
             }
         };
-        ss.setSpan(clickableSpan,21,ss.length(),Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ss.setSpan(clickableSpan, 21, ss.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         link.setText(ss);
         link.setMovementMethod(LinkMovementMethod.getInstance());
         return v;
     }
+
     public void setUrl(String url) {
         this.url = url;
 

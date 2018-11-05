@@ -27,7 +27,7 @@ public class MainFragment extends Fragment {
     }
 
     @Override
-    public void onStart(){
+    public void onStart() {
         super.onStart();
     }
 
@@ -55,10 +55,10 @@ public class MainFragment extends Fragment {
         return v;
     }
 
-    public void onClickDisplayBuilding(){
+    public void onClickDisplayBuilding() {
         Spinner buildings = Objects.requireNonNull(getActivity()).findViewById(R.id.buildings);
         final MediaPlayer mediaPlayer = MediaPlayer.create(getActivity(), R.raw.whoosh);
-        if(!buildings.getSelectedItem().toString().equals(getString(R.string.default_building))) {
+        if (!buildings.getSelectedItem().toString().equals(getString(R.string.default_building))) {
             Intent intent = new Intent(getActivity(), BuildingActivity.class);
             intent.putExtra("building", String.valueOf(buildings.getSelectedItem()));
             startActivity(intent);

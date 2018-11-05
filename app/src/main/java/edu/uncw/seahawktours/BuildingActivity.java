@@ -19,13 +19,14 @@ public class BuildingActivity extends AppCompatActivity {
     }
 
     private ShareActionProvider shareActionProvider;
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         TextView buildingName = findViewById(R.id.building_name);
         getMenuInflater().inflate(R.menu.toolbar_menu_share, menu);
         MenuItem menuItem = menu.findItem(R.id.menu_share);
         shareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(menuItem);
-        setShareActionIntent(getText(R.string.check_out_building) + buildingName.getText().toString()+ "\n\n" + BuildingFragment.url);
+        setShareActionIntent(getText(R.string.check_out_building) + buildingName.getText().toString() + "\n\n" + BuildingFragment.url);
         return true;
     }
 
@@ -36,7 +37,7 @@ public class BuildingActivity extends AppCompatActivity {
         shareActionProvider.setShareIntent(intent);
     }
 
-    public boolean onOptionsItemSelected(MenuItem item){
+    public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_about:
                 startActivity(new Intent(BuildingActivity.this, AboutActivity.class));
