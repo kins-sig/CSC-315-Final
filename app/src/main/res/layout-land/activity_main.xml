@@ -7,9 +7,9 @@
     tools:context=".MainActivity">
 
     <fragment
-        android:name="edu.uncw.seahawktours.MainFragment"
         android:id="@+id/main_fragment"
+        android:name="edu.uncw.seahawktours.MainFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 </android.support.constraint.ConstraintLayout>
