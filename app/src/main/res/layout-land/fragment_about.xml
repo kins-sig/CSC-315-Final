@@ -7,10 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".AboutActivity">
 
-    <include
-        layout="@layout/toolbar_main"
-        android:id="@+id/toolbar" />
-
     <TextView
         android:id="@+id/created_by"
         android:layout_width="match_parent"
@@ -30,8 +26,7 @@
         android:layout_marginTop="8dp"
         android:contentDescription="@string/joren_picture"
         android:src="@drawable/joren_bad_haircut_baby"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="@+id/created_by"
         app:layout_constraintTop_toBottomOf="@id/created_by" />
 
     <TextView

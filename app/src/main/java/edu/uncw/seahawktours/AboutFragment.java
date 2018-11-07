@@ -5,9 +5,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextPaint;
@@ -17,8 +14,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import java.util.Objects;
 
 public class AboutFragment extends Fragment {
 
@@ -35,11 +30,6 @@ public class AboutFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_about, container, false);
-        Toolbar toolbar = v.findViewById(R.id.toolbar);
-        ((AppCompatActivity) Objects.requireNonNull(getActivity())).setSupportActionBar(toolbar);
-        ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
-        if (actionBar == null) throw new AssertionError();
-        actionBar.setDisplayHomeAsUpEnabled(true);
         TextView link = v.findViewById(R.id.uncw_buildings_website);
         SpannableString ss = new SpannableString(getString(R.string.uncw_buildings_website_text));
         ClickableSpan clickableSpan = new ClickableSpan() {
