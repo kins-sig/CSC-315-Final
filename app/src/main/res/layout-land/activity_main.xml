@@ -15,6 +15,7 @@
         android:name="edu.uncw.seahawktours.MainFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize"/>
+        android:layout_marginTop="?attr/actionBarSize"
+        tools:layout="@layout/fragment_main"/>
 
 </android.support.constraint.ConstraintLayout>

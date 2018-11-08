@@ -31,22 +31,14 @@ public class MainActivity extends AppCompatActivity {
             MainFragment mainFragment = new MainFragment();
             FragmentManager manager = getSupportFragmentManager();
             manager.beginTransaction()
-                    .replace(R.id.left_pane, mainFragment, mainFragment.getTag())
+                    .replace(R.id.left_pane, mainFragment)
                     .commit();
-
+            MainFragment mainFragment1 = new MainFragment();
+            manager.beginTransaction()
+                    .replace(R.id.right_pane, mainFragment1)
+                    .commit();
         }
-//        else {
-//            MainFragment mainFragment = new MainFragment();
-//            FragmentManager manager = getSupportFragmentManager();
-//            manager.beginTransaction()
-//                    .replace(R.id.main_fragment, mainFragment, mainFragment.getTag())
-//                    .commit();
-//        }
 
-//        BuildingFragment buildingFragment = new BuildingFragment();
-//        manager.beginTransaction()
-//                .replace(R.id.building_pane, buildingFragment, buildingFragment.getTag())
-//                .commit();
 
     }
 
@@ -64,5 +56,9 @@ public class MainActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
     }
 }

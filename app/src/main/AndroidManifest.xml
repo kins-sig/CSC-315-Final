@@ -20,11 +20,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".BuildingActivity"
+
             android:parentActivityName=".MainActivity">
         </activity>
         <activity android:name=".AboutActivity"
+
             android:parentActivityName=".MainActivity">
         </activity>
+
     </application>
 
 </manifest>

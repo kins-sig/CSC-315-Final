@@ -103,6 +103,10 @@ public class BuildingFragment extends Fragment {
         }
         return v;
     }
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+    }
 
     public void setUrl(String url) {
         this.url = url;

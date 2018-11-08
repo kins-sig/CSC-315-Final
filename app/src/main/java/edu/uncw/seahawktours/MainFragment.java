@@ -57,4 +57,8 @@ public class MainFragment extends Fragment {
             mediaPlayer.start();
         }
     }
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+    }
 }

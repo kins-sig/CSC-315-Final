@@ -54,4 +54,8 @@ public class AboutFragment extends Fragment {
         link.setMovementMethod(LinkMovementMethod.getInstance());
         return v;
     }
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+    }
 }
