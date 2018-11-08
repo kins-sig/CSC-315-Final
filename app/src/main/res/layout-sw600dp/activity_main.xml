@@ -11,27 +11,28 @@
         layout="@layout/toolbar_main" />
 
     <LinearLayout
+        android:id="@+id/whole_pane"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
+        android:layout_marginTop="?attr/actionBarSize"
         android:baselineAligned="false">
 
         <fragment
-            android:id="@+id/left_fragment"
+            android:id="@+id/left_pane"
             android:name="edu.uncw.seahawktours.MainFragment"
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="?attr/actionBarSize"
-            android:layout_weight="2"/>
+            android:layout_weight="1"
+            tools:layout="@layout/fragment_main"/>
 
         <fragment
-            android:id="@+id/right_fragment"
+            android:id="@+id/right_pane"
             android:name="edu.uncw.seahawktours.BuildingFragment"
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="?attr/actionBarSize"
-            android:layout_weight="1"/>
-
+            android:layout_weight="4"
+            tools:layout="@layout/fragment_building" />
     </LinearLayout>
-</android.support.constraint.ConstraintLayout>
 
+</android.support.constraint.ConstraintLayout>

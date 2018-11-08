@@ -1,6 +1,7 @@
 package edu.uncw.seahawktours;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -24,19 +25,29 @@ public class MainActivity extends AppCompatActivity {
         assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(false);
 
-        ViewGroup leftView = findViewById(R.id.left_fragment);
-        if (leftView != null){
-            MainFragment leftFragment = new MainFragment();
-            BuildingFragment rightFragment = new BuildingFragment();
-
+        if ((getResources().getConfiguration().screenLayout &
+                Configuration.SCREENLAYOUT_SIZE_MASK) ==
+                Configuration.SCREENLAYOUT_SIZE_LARGE) {
+            MainFragment mainFragment = new MainFragment();
             FragmentManager manager = getSupportFragmentManager();
-            FragmentTransaction transaction = manager.beginTransaction();
+            manager.beginTransaction()
+                    .replace(R.id.left_pane, mainFragment, mainFragment.getTag())
+                    .commit();
 
-            transaction.add(R.id.left_fragment, leftFragment);
-            transaction.add(R.id.right_fragment, rightFragment);
-
-            transaction.commit();
         }
+//        else {
+//            MainFragment mainFragment = new MainFragment();
+//            FragmentManager manager = getSupportFragmentManager();
+//            manager.beginTransaction()
+//                    .replace(R.id.main_fragment, mainFragment, mainFragment.getTag())
+//                    .commit();
+//        }
+
+//        BuildingFragment buildingFragment = new BuildingFragment();
+//        manager.beginTransaction()
+//                .replace(R.id.building_pane, buildingFragment, buildingFragment.getTag())
+//                .commit();
+
     }
 
     @Override
@@ -47,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-
             case R.id.menu_about:
                 startActivity(new Intent(MainActivity.this, AboutActivity.class));
                 return true;
