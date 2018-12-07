@@ -10,10 +10,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.ViewGroup;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MainFragment.Listener {
+
+    private FusedLocationProviderClient mFusedLocationClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,20 +28,7 @@ public class MainActivity extends AppCompatActivity {
         assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(false);
 
-        if ((getResources().getConfiguration().screenLayout &
-                Configuration.SCREENLAYOUT_SIZE_MASK) ==
-                Configuration.SCREENLAYOUT_SIZE_LARGE) {
-            MainFragment mainFragment = new MainFragment();
-            FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction()
-                    .replace(R.id.left_pane, mainFragment)
-                    .commit();
-            MainFragment mainFragment1 = new MainFragment();
-            manager.beginTransaction()
-                    .replace(R.id.right_pane, mainFragment1)
-                    .commit();
-        }
-
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
     }
 
@@ -61,4 +51,11 @@ public class MainActivity extends AppCompatActivity {
     public void onDestroy(){
         super.onDestroy();
     }
+
+    public void onClick(int position){
+        Intent intent = new Intent(this, BuildingActivity.class);
+        intent.putExtra("EXTRA_BUILDING_ID", position);
+        startActivity(intent);
+    }
+
 }

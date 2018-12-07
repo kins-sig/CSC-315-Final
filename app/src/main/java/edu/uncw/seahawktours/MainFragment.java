@@ -1,23 +1,29 @@
 package edu.uncw.seahawktours;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.Spinner;
+import android.support.v7.widget.LinearLayoutManager;
+import io.objectbox.Box;
+import java.util.List;
+import edu.uncw.seahawktours.CaptionedImagesAdapter.Listener;
 
-import java.util.Objects;
 
 
-public class MainFragment extends Fragment {
+public class MainFragment extends Fragment implements CaptionedImagesAdapter.Listener{
 
-    Button btnGo;
+    Box<Building> buildingBox;
+    List<Building> buildingList;
+    private Listener listener;
+
 
     public MainFragment() {
         // Required empty public constructor
@@ -28,37 +34,45 @@ public class MainFragment extends Fragment {
         super.onStart();
     }
 
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_main, container, false);
-        Spinner buildings = v.findViewById(R.id.buildings);
-        ArrayAdapter<CharSequence> spinnerArrayAdapter = ArrayAdapter.createFromResource(Objects.requireNonNull(getActivity()).getBaseContext(),
-                R.array.buildings, android.R.layout.simple_spinner_item);
-        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        buildings.setAdapter(spinnerArrayAdapter);
-        btnGo = v.findViewById(R.id.go_button);
-        btnGo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onClickDisplayBuilding();
-            }
-        });
-        return v;
+    interface Listener {
+        void onClick(int position);
     }
 
-    public void onClickDisplayBuilding() {
-        Spinner buildings = Objects.requireNonNull(getActivity()).findViewById(R.id.buildings);
-        final MediaPlayer mediaPlayer = MediaPlayer.create(getActivity(), R.raw.whoosh);
-        if (!buildings.getSelectedItem().toString().equals(getString(R.string.default_building))) {
-            Intent intent = new Intent(getActivity(), BuildingActivity.class);
-            intent.putExtra("building", String.valueOf(buildings.getSelectedItem()));
-            startActivity(intent);
-            mediaPlayer.start();
-        }
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        RecyclerView buildingRecycler = (RecyclerView) inflater.inflate(R.layout.fragment_main, container, false);
+
+        buildingBox = ((App) getActivity().getApplication()).getBoxStore().boxFor(Building.class);
+        buildingList = buildingBox.getAll();
+
+
+
+
+        CaptionedImagesAdapter adapter = new CaptionedImagesAdapter(buildingList,getContext());
+        buildingRecycler.setAdapter(adapter);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        buildingRecycler.setLayoutManager(layoutManager);
+
+        adapter.setListener(this);
+
+        return buildingRecycler;
     }
+
     @Override
     public void onDestroy(){
         super.onDestroy();
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        this.listener = (Listener)context;
+        super.onAttach(context);
+    }
+
+    @Override
+    public void onClick(int position) {
+        listener.onClick(position);
     }
 }
