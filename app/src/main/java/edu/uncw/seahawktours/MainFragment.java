@@ -46,9 +46,6 @@ public class MainFragment extends Fragment implements CaptionedImagesAdapter.Lis
         buildingBox = ((App) getActivity().getApplication()).getBoxStore().boxFor(Building.class);
         buildingList = buildingBox.getAll();
 
-
-
-
         CaptionedImagesAdapter adapter = new CaptionedImagesAdapter(buildingList,getContext());
         buildingRecycler.setAdapter(adapter);
 
@@ -75,4 +72,6 @@ public class MainFragment extends Fragment implements CaptionedImagesAdapter.Lis
     public void onClick(int position) {
         listener.onClick(position);
     }
+
+
 }

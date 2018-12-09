@@ -125,8 +125,4 @@ public class BuildingActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-    public void setUrl(String url) {
-        this.url = url;
-
-    }
 }

@@ -6,14 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".BuildingActivity">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar_main" />
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/relativeLayout">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_main" />
 
         <ImageView
             android:id="@+id/building_image"

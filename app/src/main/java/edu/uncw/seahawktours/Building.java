@@ -14,16 +14,20 @@ public class Building {
     private String caption;
     private String description;
     private String url;
+    private double latitude;
+    private double longitude;
 
 
     public Building(){}
 
-    public Building(String name, String imageResourceString, String caption, String description, String url) {
+    public Building(String name, String imageResourceString, String caption, String description, String url, double latitude, double longitude) {
         this.name = name;
         this.imageResourceString = imageResourceString;
         this.caption = caption;
         this.description = description;
         this.url = url;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public String getName() {
@@ -52,5 +56,13 @@ public class Building {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
     }
 }
