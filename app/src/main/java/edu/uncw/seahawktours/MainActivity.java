@@ -3,12 +3,10 @@ package edu.uncw.seahawktours;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.content.res.Configuration;
+import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.support.design.widget.Snackbar;
 
@@ -78,14 +77,7 @@ public class MainActivity extends AppCompatActivity implements MainFragment.List
     public void recordClick(View view) {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
-            Snackbar snackbar = Snackbar.make(findViewById(R.id.top_layout), "Finding nearest building!", Snackbar.LENGTH_LONG);
-            snackbar.setAction("Undo", new View.OnClickListener(){
-                @Override
-                public void onClick (View view){
-                    Toast.makeText(MainActivity.this, "Undone!", Toast.LENGTH_SHORT).show();
-                }
-            });
-            snackbar.show();
+            Toast.makeText(MainActivity.this, "Nearest building...", Toast.LENGTH_SHORT).show();
             mFusedLocationClient.getLastLocation()
                     .addOnSuccessListener(this, new OnSuccessListener<Location>() {
                         @Override
@@ -93,10 +85,15 @@ public class MainActivity extends AppCompatActivity implements MainFragment.List
                             if (location != null) {
                                 double latitude = location.getLatitude();
                                 double longitude = location.getLongitude();
-                                findNearestBuilding(latitude, longitude);
+                                int position = findNearestBuilding(latitude, longitude);
+                                Intent intent = new Intent(getApplicationContext(), BuildingActivity.class);
+                                intent.putExtra("EXTRA_BUILDING_ID", position);
+                                startActivity(intent);
+
                             }
                         }
                     });
+
 
         }
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
@@ -109,26 +106,65 @@ public class MainActivity extends AppCompatActivity implements MainFragment.List
         }
     }
 
-    public void findNearestBuilding(double latitude, double longitude) {
+    public int findNearestBuilding(double latitude, double longitude) {
         Box<Building> buildingBox = ((App) getApplication()).getBoxStore().boxFor(Building.class);
         List<Building> buildingList = buildingBox.getAll();
-        int position;
+        int position=0;
+        double minDistance = 999999;
         for (int i = 0; i < buildingList.size(); i++) {
-            double minDistance = 999999;
             double buildingLat = buildingList.get(i).getLatitude();
             double buildingLong = buildingList.get(i).getLongitude();
             double distance = Math.sqrt((latitude - buildingLat) * (latitude - buildingLat) + (longitude - buildingLong) * (longitude - buildingLong));
 
-            if (distance < minDistance) {
+            if (Double.compare(distance,minDistance)<0) {
                 minDistance = distance;
                 position = i;
-            } else {
-                position = 10;
             }
+        }
 
-            Intent intent = new Intent(this, BuildingActivity.class);
-            intent.putExtra("EXTRA_BUILDING_ID", position);
-            startActivity(intent);
+        return position;
+
+    }
+
+    public void onClickFindLocation(View view) {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+
+            mFusedLocationClient.getLastLocation()
+                    .addOnSuccessListener(this, new OnSuccessListener<Location>() {
+                        @Override
+                        public void onSuccess(Location location) {
+                            if (location != null) {
+                                double latitude = location.getLatitude();
+                                double longitude = location.getLongitude();
+                                final Snackbar snackbar = Snackbar.make(findViewById(R.id.top_layout), "Current location: " + latitude +" " + longitude, Snackbar.LENGTH_LONG);
+
+                                Snackbar.SnackbarLayout layout = (Snackbar.SnackbarLayout) snackbar.getView();
+                                TextView textView = layout.findViewById(android.support.design.R.id.snackbar_text);
+                                textView.setTextColor(Color.WHITE);
+                                layout.setBackgroundColor(getResources().getColor(R.color.color_primary_dark));
+
+                                snackbar.setActionTextColor(getResources().getColor(R.color.color_primary));
+                                snackbar.setAction("Okay", new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        snackbar.dismiss();
+                                    }
+                                });
+                                snackbar.show();
+                            }
+                        }
+                    });
+
+        }
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            Toast.makeText(this, "Cannot detect location until you grant permission!", Toast.LENGTH_SHORT).show();
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                    MY_PERMISSIONS_REQUEST_LOCATION);
+
         }
     }
 }
