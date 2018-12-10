@@ -27,7 +27,7 @@ import io.objectbox.Box;
 
 public class BuildingActivity extends AppCompatActivity {
 
-    public static final String EXTRA_BUILDING_ID="buildingId";
+    public static final String EXTRA_BUILDING_ID = "buildingId";
     public static String url = null;
     Box<Building> buildingBox;
     List<Building> buildingList;
@@ -45,19 +45,19 @@ public class BuildingActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();
-        int buildingId = intent.getIntExtra("EXTRA_BUILDING_ID",-1);
+        int buildingId = intent.getIntExtra("EXTRA_BUILDING_ID", -1);
 
         buildingBox = ((App) getApplication()).getBoxStore().boxFor(Building.class);
         buildingList = buildingBox.getAll();
 
-        String buildingName=buildingList.get(buildingId).getName();
+        String buildingName = buildingList.get(buildingId).getName();
         TextView textView = findViewById(R.id.building_name);
         textView.setText(buildingName);
 
         TextView caption = findViewById(R.id.building_caption);
         caption.setText(buildingList.get(buildingId).getCaption());
 
-        int buildingImage = getResources().getIdentifier(buildingList.get(buildingId).getImageResourceString(), "drawable",getPackageName());
+        int buildingImage = getResources().getIdentifier(buildingList.get(buildingId).getImageResourceString(), "drawable", getPackageName());
         ImageView imageView = findViewById(R.id.building_image);
         imageView.setImageResource(buildingImage);
 
@@ -67,6 +67,7 @@ public class BuildingActivity extends AppCompatActivity {
 
 
         TextView link = findViewById(R.id.building_url);
+        setUrl(buildingList.get(buildingId).getUrl());
         link.setText(buildingList.get(buildingId).getUrl());
         SpannableString ss = new SpannableString(getString(R.string.learn_more_here));
         ClickableSpan clickableSpan = new ClickableSpan() {
@@ -100,7 +101,7 @@ public class BuildingActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.toolbar_menu_share, menu);
         MenuItem menuItem = menu.findItem(R.id.menu_share);
         shareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(menuItem);
-        setShareActionIntent(getText(R.string.check_out_building) + buildingName.getText().toString() + "\n\n" + url);
+        setShareActionIntent(getText(R.string.check_out_building) + buildingName.getText().toString() + "\n\n" + BuildingActivity.url);
         return true;
     }
 
@@ -120,9 +121,14 @@ public class BuildingActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
     @Override
-    public void onDestroy(){
+    public void onDestroy() {
         super.onDestroy();
     }
 
+    public void setUrl(String url) {
+        this.url = url;
+
+    }
 }

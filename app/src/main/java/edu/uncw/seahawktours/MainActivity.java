@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements MainFragment.List
 
     private FusedLocationProviderClient mFusedLocationClient;
     private int MY_PERMISSIONS_REQUEST_LOCATION = 1;
+    private Location mCurrentLocation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +76,7 @@ public class MainActivity extends AppCompatActivity implements MainFragment.List
     }
 
     public void recordClick(View view) {
+
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
             Toast.makeText(MainActivity.this, "Nearest building...", Toast.LENGTH_SHORT).show();
@@ -83,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements MainFragment.List
                         @Override
                         public void onSuccess(Location location) {
                             if (location != null) {
+                                mCurrentLocation = location;
                                 double latitude = location.getLatitude();
                                 double longitude = location.getLongitude();
                                 int position = findNearestBuilding(latitude, longitude);
@@ -127,14 +130,16 @@ public class MainActivity extends AppCompatActivity implements MainFragment.List
     }
 
     public void onClickFindLocation(View view) {
+
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
-
-            mFusedLocationClient.getLastLocation()
-                    .addOnSuccessListener(this, new OnSuccessListener<Location>() {
+            mFusedLocationClient.getLastLocation().addOnSuccessListener(this, new OnSuccessListener<Location>() {
                         @Override
                         public void onSuccess(Location location) {
                             if (location != null) {
+                                mCurrentLocation = location;
+                                System.out.println(mCurrentLocation.toString());
+
                                 double latitude = location.getLatitude();
                                 double longitude = location.getLongitude();
                                 final Snackbar snackbar = Snackbar.make(findViewById(R.id.top_layout), "Current location: " + latitude +" " + longitude, Snackbar.LENGTH_LONG);
