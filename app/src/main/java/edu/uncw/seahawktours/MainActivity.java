@@ -76,12 +76,10 @@ public class MainActivity extends AppCompatActivity implements MainFragment.List
     }
 
     public void recordClick(View view) {
-
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
             Toast.makeText(MainActivity.this, "Nearest building...", Toast.LENGTH_SHORT).show();
-            mFusedLocationClient.getLastLocation()
-                    .addOnSuccessListener(this, new OnSuccessListener<Location>() {
+            mFusedLocationClient.getLastLocation().addOnSuccessListener(this, new OnSuccessListener<Location>() {
                         @Override
                         public void onSuccess(Location location) {
                             if (location != null) {
@@ -92,7 +90,6 @@ public class MainActivity extends AppCompatActivity implements MainFragment.List
                                 Intent intent = new Intent(getApplicationContext(), BuildingActivity.class);
                                 intent.putExtra("EXTRA_BUILDING_ID", position);
                                 startActivity(intent);
-
                             }
                         }
                     });
@@ -138,8 +135,6 @@ public class MainActivity extends AppCompatActivity implements MainFragment.List
                         public void onSuccess(Location location) {
                             if (location != null) {
                                 mCurrentLocation = location;
-                                System.out.println(mCurrentLocation.toString());
-
                                 double latitude = location.getLatitude();
                                 double longitude = location.getLongitude();
                                 final Snackbar snackbar = Snackbar.make(findViewById(R.id.top_layout), "Current location: " + latitude +" " + longitude, Snackbar.LENGTH_LONG);
